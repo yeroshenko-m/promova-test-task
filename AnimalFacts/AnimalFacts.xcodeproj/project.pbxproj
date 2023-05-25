@@ -23,9 +23,7 @@
 		2CB50F082A1F485E005D04FF /* AnimalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50F072A1F485E005D04FF /* AnimalsListView.swift */; };
 		2CE22AD82A1F541300AA2438 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AD72A1F541300AA2438 /* ViewState.swift */; };
 		2CE22ADA2A1F57B900AA2438 /* AnimalsListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AD92A1F57B900AA2438 /* AnimalsListError.swift */; };
-		2CE22ADC2A1F598100AA2438 /* AnimalRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22ADB2A1F598100AA2438 /* AnimalRows.swift */; };
 		2CE22ADE2A1F599200AA2438 /* AnimalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22ADD2A1F599200AA2438 /* AnimalRow.swift */; };
-		2CE22AE12A1F5AC500AA2438 /* AnimalRowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE02A1F5AC500AA2438 /* AnimalRowsView.swift */; };
 		2CE22AE42A1F5AE200AA2438 /* AnimalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE32A1F5AE200AA2438 /* AnimalRowView.swift */; };
 		2CE22AE62A1F5C1900AA2438 /* AnimalRowView+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE52A1F5C1900AA2438 /* AnimalRowView+Constants.swift */; };
 		2CE22AE82A1F5D2900AA2438 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */; };
@@ -49,9 +47,7 @@
 		2CB50F072A1F485E005D04FF /* AnimalsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListView.swift; sourceTree = "<group>"; };
 		2CE22AD72A1F541300AA2438 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		2CE22AD92A1F57B900AA2438 /* AnimalsListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListError.swift; sourceTree = "<group>"; };
-		2CE22ADB2A1F598100AA2438 /* AnimalRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRows.swift; sourceTree = "<group>"; };
 		2CE22ADD2A1F599200AA2438 /* AnimalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRow.swift; sourceTree = "<group>"; };
-		2CE22AE02A1F5AC500AA2438 /* AnimalRowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRowsView.swift; sourceTree = "<group>"; };
 		2CE22AE32A1F5AE200AA2438 /* AnimalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRowView.swift; sourceTree = "<group>"; };
 		2CE22AE52A1F5C1900AA2438 /* AnimalRowView+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRowView+Constants.swift"; sourceTree = "<group>"; };
 		2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
@@ -157,7 +153,7 @@
 		2CB50F042A1F4846005D04FF /* AnimalsList */ = {
 			isa = PBXGroup;
 			children = (
-				2CE22ADF2A1F5A6200AA2438 /* AnimalRows */,
+				2CE22ADF2A1F5A6200AA2438 /* AnimalRow */,
 				2CB50F052A1F4854005D04FF /* AnimalsList.swift */,
 				2CE22AD92A1F57B900AA2438 /* AnimalsListError.swift */,
 				2CB50F072A1F485E005D04FF /* AnimalsListView.swift */,
@@ -174,17 +170,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		2CE22ADF2A1F5A6200AA2438 /* AnimalRows */ = {
-			isa = PBXGroup;
-			children = (
-				2CE22AE22A1F5AD300AA2438 /* AnimalRow */,
-				2CE22ADB2A1F598100AA2438 /* AnimalRows.swift */,
-				2CE22AE02A1F5AC500AA2438 /* AnimalRowsView.swift */,
-			);
-			path = AnimalRows;
-			sourceTree = "<group>";
-		};
-		2CE22AE22A1F5AD300AA2438 /* AnimalRow */ = {
+		2CE22ADF2A1F5A6200AA2438 /* AnimalRow */ = {
 			isa = PBXGroup;
 			children = (
 				2CE22ADD2A1F599200AA2438 /* AnimalRow.swift */,
@@ -296,7 +282,6 @@
 			files = (
 				2CE22AEA2A1F5DA900AA2438 /* String+URL.swift in Sources */,
 				2CE22AE82A1F5D2900AA2438 /* ComingSoonView.swift in Sources */,
-				2CE22ADC2A1F598100AA2438 /* AnimalRows.swift in Sources */,
 				2CB50EF12A1F2EF4005D04FF /* AnimalsFactsAPI.swift in Sources */,
 				2CB50F062A1F4854005D04FF /* AnimalsList.swift in Sources */,
 				2CE22AD82A1F541300AA2438 /* ViewState.swift in Sources */,
@@ -304,10 +289,10 @@
 				2CB50F082A1F485E005D04FF /* AnimalsListView.swift in Sources */,
 				2CB50F012A1F4425005D04FF /* Root.swift in Sources */,
 				2CE22AE42A1F5AE200AA2438 /* AnimalRowView.swift in Sources */,
-				2CE22AE12A1F5AC500AA2438 /* AnimalRowsView.swift in Sources */,
 				2CB50EF82A1F2FA5005D04FF /* AnimalFact.swift in Sources */,
 				2CB50EF62A1F2F76005D04FF /* Animal.swift in Sources */,
 				2CB50EDE2A1EB5AE005D04FF /* AnimalFactsApp.swift in Sources */,
+				2CE22AEC2A1F620100AA2438 /* Color+Hex.swift in Sources */,
 				2CE22ADA2A1F57B900AA2438 /* AnimalsListError.swift in Sources */,
 				2CE22AE62A1F5C1900AA2438 /* AnimalRowView+Constants.swift in Sources */,
 				2CB50F032A1F4830005D04FF /* RootView.swift in Sources */,
