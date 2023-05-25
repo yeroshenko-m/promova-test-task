@@ -11,13 +11,15 @@ import Foundation
 
 struct AnimalsList: ReducerProtocol {
     struct State: Equatable {
-        var view: ViewState<AnimalRows.State, AnimalsListError>
+        var rows: IdentifiedArrayOf<AnimalRow.State> = []
+        var isLoading: Bool = false
+        var error: AnimalsListError?
     }
 
     enum Action: Equatable {
         case fetchAnimals
         case animalsResponse(TaskResult<[Animal]>)
-        case rows(AnimalRows.Action)
+        case row(index: AnimalRow.State.ID, action: AnimalRow.Action)
     }
 
     @Dependency(\.factsClient) var factsClient: AnimalFactsClient
@@ -26,26 +28,28 @@ struct AnimalsList: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case .fetchAnimals:
-                state.view = .loading
+                state.isLoading = true
                 return .run { send in
                     await send(.animalsResponse(TaskResult { try await factsClient.animals() }))
                 }
 
             case let .animalsResponse(.success(animals)):
-                let rows = IdentifiedArray(uniqueElements: animals.map { AnimalRow.State(animal: $0) })
-                state.view = .loaded(AnimalRows.State(rows: rows))
+                let sortedAnimals = animals.sorted { $1.order > $0.order }
+                state.rows = IdentifiedArray(uniqueElements: sortedAnimals.map { AnimalRow.State(animal: $0) })
+                state.isLoading = false
                 return .none
 
             case let .animalsResponse(.failure(error)):
-                state.view = .failed(AnimalsListError.underlying(error))
+                state.error = AnimalsListError.underlying(error)
+                state.isLoading = false
                 return .none
 
-            case .rows:
+            case .row:
                 return .none
             }
         }
-        .ifLet(\.view.value, action: /Action.rows) {
-            AnimalRows()
+        .forEach(\.rows, action: /Action.row) {
+            AnimalRow()
         }
     }
 }
