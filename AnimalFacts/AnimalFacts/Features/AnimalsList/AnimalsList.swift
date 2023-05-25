@@ -23,6 +23,7 @@ struct AnimalsList: ReducerProtocol {
         case fetchAnimals
         case animalsResponse(TaskResult<[Animal]>)
         case retry(AnimalsListRetry.Action)
+        case facts(AnimalFacts.Action)
         case animalTapped(UUID)
         case navigationSelectionSet(UUID)
         case watchAdTapped(UUID)
@@ -116,10 +117,16 @@ struct AnimalsList: ReducerProtocol {
 
             case .adWatched:
                 return .none
+
+            case .facts:
+                return .none
             }
         }
         .ifLet(\.retry, action: /Action.retry) {
             AnimalsListRetry()
+        }
+        .ifLet(\.selection, action: /Action.facts) {
+            AnimalFacts()
         }
     }
 }

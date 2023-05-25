@@ -18,6 +18,7 @@ struct RootView: View {
                 AnimalsListView(store: self.store.scope(state: \.animalsList, action: Root.Action.animalsList))
             }
         }
+        .tint(.black)
     }
 }
 
