@@ -33,6 +33,18 @@ struct AnimalsListView: View {
                 }
             }
             .onAppear { viewStore.send(.fetchAnimals) }
+            .alert(
+                self.store.scope(state: \.alert, action: { $0 }),
+                dismiss: .alertDismissed
+            )
+            .fullScreenCover(
+                isPresented: viewStore.binding(
+                    get: \.isWatchingAd,
+                    send: .adWatched
+                )
+            ) {
+                AdView()
+            }
         }
     }
 
