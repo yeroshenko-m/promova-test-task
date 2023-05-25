@@ -28,6 +28,7 @@
 		2CE22AE62A1F5C1900AA2438 /* AnimalRowView+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE52A1F5C1900AA2438 /* AnimalRowView+Constants.swift */; };
 		2CE22AE82A1F5D2900AA2438 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */; };
 		2CE22AEA2A1F5DA900AA2438 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE92A1F5DA900AA2438 /* String+URL.swift */; };
+		2CE22AEC2A1F620100AA2438 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AEB2A1F620100AA2438 /* Color+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2CE22AE52A1F5C1900AA2438 /* AnimalRowView+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRowView+Constants.swift"; sourceTree = "<group>"; };
 		2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		2CE22AE92A1F5DA900AA2438 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		2CE22AEB2A1F620100AA2438 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			children = (
 				2CE22AD72A1F541300AA2438 /* ViewState.swift */,
 				2CE22AE92A1F5DA900AA2438 /* String+URL.swift */,
+				2CE22AEB2A1F620100AA2438 /* Color+Hex.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
