@@ -23,12 +23,13 @@ struct AnimalsListView: View {
     private var content: some View {
         WithViewStore(self.store) { $0 } content: { viewStore in
             ZStack {
-                if let error = viewStore.error {
-                    Text(error.localizedDescription)
-                } else if viewStore.isLoading {
+                animalsList(with: viewStore)
+
+                retryView(with: viewStore)
+
+                if viewStore.isLoading {
                     ProgressView()
-                } else {
-                    animalsList(with: viewStore)
+                        .scaleEffect(Constants.loaderScale)
                 }
             }
             .onAppear { viewStore.send(.fetchAnimals) }
@@ -50,8 +51,20 @@ struct AnimalsListView: View {
             }
             .padding(Constants.rowsHorizontalPadding)
         }
-        .navigationTitle("Select a category")
+        .navigationTitle("Animal facts")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    @ViewBuilder
+    private func retryView(with viewStore: ViewStoreOf<AnimalsList>) -> some View {
+        IfLetStore(
+            self.store.scope(
+                state: \.retry,
+                action: AnimalsList.Action.retry
+            )
+        ) { retryStore in
+            AnimalsListRetryView(store: retryStore)
+        }
     }
 }
 
@@ -60,6 +73,7 @@ extension AnimalsListView {
         static let rowsHorizontalPadding: CGFloat = 16.0
         static let rowsVerticalPadding: CGFloat = 16.0
         static let backgroundColor: Color = Color(hexString: "#BEC8FF")
+        static let loaderScale: CGFloat = 2.0
     }
 }
 
