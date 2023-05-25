@@ -83,9 +83,9 @@ struct AnimalsListView: View {
             destination: IfLetStore(
                 self.store.scope(
                     state: \.selection,
-                    action: AnimalsList.Action.animalTapped
-                )) { _ in
-                    EmptyView()
+                    action: AnimalsList.Action.facts
+                )) { factsStore in
+                    AnimalFactsView(store: factsStore)
                 },
             tag: animal.id,
             selection: viewStore.binding(
