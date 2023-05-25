@@ -14,6 +14,7 @@ struct AnimalsList: ReducerProtocol {
         var rows: IdentifiedArrayOf<AnimalRow.State> = []
         var isLoading: Bool = false
         var retry: AnimalsListRetry.State?
+        var selection: AnimalRow.State?
     }
 
     enum Action: Equatable {

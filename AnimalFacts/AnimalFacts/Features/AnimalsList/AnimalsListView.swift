@@ -46,7 +46,7 @@ struct AnimalsListView: View {
                         action: AnimalsList.Action.row(index:action:)
                     )
                 ) { rowStore in
-                    AnimalRowView(store: rowStore)
+                    animalRow(with: viewStore, rowStore: rowStore)
                 }
             }
             .padding(Constants.rowsHorizontalPadding)
@@ -65,6 +65,25 @@ struct AnimalsListView: View {
         ) { retryStore in
             AnimalsListRetryView(store: retryStore)
         }
+    }
+
+    @ViewBuilder
+    private func animalRow(
+        with viewStore: ViewStoreOf<AnimalsList>,
+        rowStore: StoreOf<AnimalRow>
+    ) -> some View {
+        NavigationLink(
+            destination: IfLetStore(
+                self.store.scope(
+                    state: \.selection,
+                    action: AnimalsList.Action.row(index:action:)
+                )) { _ in
+                    EmptyView()
+                },
+            label: {
+                AnimalRowView(store: rowStore)
+            }
+        )
     }
 }
 
