@@ -40,13 +40,8 @@ struct AnimalsListView: View {
     private func animalsList(with viewStore: ViewStoreOf<AnimalsList>) -> some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: Constants.rowsVerticalPadding) {
-                ForEachStore(
-                    self.store.scope(
-                        state: \.rows,
-                        action: AnimalsList.Action.row(index:action:)
-                    )
-                ) { rowStore in
-                    animalRow(with: viewStore, rowStore: rowStore)
+                ForEach(viewStore.animals) { animal in
+                    animalRow(with: animal, viewStore: viewStore)
                 }
             }
             .padding(Constants.rowsHorizontalPadding)
@@ -69,21 +64,25 @@ struct AnimalsListView: View {
 
     @ViewBuilder
     private func animalRow(
-        with viewStore: ViewStoreOf<AnimalsList>,
-        rowStore: StoreOf<AnimalRow>
+        with animal: Animal,
+        viewStore: ViewStoreOf<AnimalsList>
     ) -> some View {
         NavigationLink(
             destination: IfLetStore(
                 self.store.scope(
                     state: \.selection,
-                    action: AnimalsList.Action.row(index:action:)
+                    action: AnimalsList.Action.animalTapped
                 )) { _ in
                     EmptyView()
                 },
-            label: {
-                AnimalRowView(store: rowStore)
-            }
-        )
+            tag: animal.id,
+            selection: viewStore.binding(
+                get: \.selection?.id,
+                send: AnimalsList.Action.animalTapped(animal.id)
+            )
+        ) {
+            AnimalRowView(animal: animal)
+        }
     }
 }
 

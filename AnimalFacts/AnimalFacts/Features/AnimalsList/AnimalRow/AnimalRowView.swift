@@ -10,36 +10,34 @@ import ComposableArchitecture
 import SwiftUI
 
 struct AnimalRowView: View {
-    let store: StoreOf<AnimalRow>
+    let animal: Animal
 
     var body: some View {
-        WithViewStore(self.store) { $0 } content: { viewStore in
-            ZStack {
-                rowContent(with: viewStore)
+        ZStack {
+            rowContent
 
-                if viewStore.isComingSoon {
-                    ComingSoonView()
-                }
+            if animal.status == .comingSoon {
+                ComingSoonView()
             }
-            .frame(height: Constants.Cell.height)
-            .cornerRadius(Constants.Cell.cornerRadius)
         }
+        .frame(height: Constants.Cell.height)
+        .cornerRadius(Constants.Cell.cornerRadius)
     }
 
     @ViewBuilder
-    private func rowContent(with viewStore: ViewStoreOf<AnimalRow>) -> some View {
+    private var rowContent: some View {
         HStack(alignment: .top, spacing: .zero) {
-            image(with: viewStore.animal.image)
-            content(with: viewStore)
+            image
+            content
             Spacer(minLength: Constants.Content.trailingPadding)
         }
         .background(Constants.Colors.background)
     }
 
     @ViewBuilder
-    private func image(with urlString: String) -> some View {
+    private var image: some View {
         AsyncImage(
-            url: urlString.asURL()) {
+            url: animal.image.asURL()) {
                 $0.resizable()
             } placeholder: {
                 imagePlaceholder
@@ -60,17 +58,17 @@ struct AnimalRowView: View {
     }
 
     @ViewBuilder
-    private func content(with viewStore: ViewStoreOf<AnimalRow>) -> some View {
+    private var content: some View {
         VStack(alignment: .leading) {
-            Text(viewStore.animal.title)
+            Text(animal.title)
                 .font(Constants.Fonts.title)
                 .foregroundColor(Constants.Colors.title)
-            Text(viewStore.animal.description)
+            Text(animal.description)
                 .font(Constants.Fonts.description)
                 .foregroundColor(Constants.Colors.description)
             Spacer()
 
-            if viewStore.isPremium {
+            if animal.status == .paid {
                 premiumLabel
             }
         }
@@ -92,6 +90,6 @@ struct AnimalRowView: View {
 
 struct AnimalRowView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimalRowView(store: Store(initialState: AnimalRow.State(animal: .elephant), reducer: AnimalRow.init))
+        AnimalRowView(animal: .elephant)
     }
 }

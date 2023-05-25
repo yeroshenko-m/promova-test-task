@@ -11,6 +11,7 @@
 		2C1337B02A1F7F57006FECF7 /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1337AF2A1F7F57006FECF7 /* String+Error.swift */; };
 		2C1337B22A1F805F006FECF7 /* AnimalsListRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1337B12A1F805F006FECF7 /* AnimalsListRetryView.swift */; };
 		2C1337B62A1F9835006FECF7 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1337B52A1F9835006FECF7 /* AdView.swift */; };
+		2C1337B92A1FA69C006FECF7 /* AnimalFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1337B82A1FA69C006FECF7 /* AnimalFacts.swift */; };
 		2CB50EDE2A1EB5AE005D04FF /* AnimalFactsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50EDD2A1EB5AE005D04FF /* AnimalFactsApp.swift */; };
 		2CB50EE22A1EB5AF005D04FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB50EE12A1EB5AF005D04FF /* Assets.xcassets */; };
 		2CB50EE52A1EB5AF005D04FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB50EE42A1EB5AF005D04FF /* Preview Assets.xcassets */; };
@@ -27,7 +28,6 @@
 		2CB50F082A1F485E005D04FF /* AnimalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50F072A1F485E005D04FF /* AnimalsListView.swift */; };
 		2CE22AD82A1F541300AA2438 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AD72A1F541300AA2438 /* ViewState.swift */; };
 		2CE22ADA2A1F57B900AA2438 /* AnimalsListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AD92A1F57B900AA2438 /* AnimalsListError.swift */; };
-		2CE22ADE2A1F599200AA2438 /* AnimalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22ADD2A1F599200AA2438 /* AnimalRow.swift */; };
 		2CE22AE42A1F5AE200AA2438 /* AnimalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE32A1F5AE200AA2438 /* AnimalRowView.swift */; };
 		2CE22AE62A1F5C1900AA2438 /* AnimalRowView+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE52A1F5C1900AA2438 /* AnimalRowView+Constants.swift */; };
 		2CE22AE82A1F5D2900AA2438 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */; };
@@ -40,6 +40,7 @@
 		2C1337AF2A1F7F57006FECF7 /* String+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Error.swift"; sourceTree = "<group>"; };
 		2C1337B12A1F805F006FECF7 /* AnimalsListRetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListRetryView.swift; sourceTree = "<group>"; };
 		2C1337B52A1F9835006FECF7 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
+		2C1337B82A1FA69C006FECF7 /* AnimalFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFacts.swift; sourceTree = "<group>"; };
 		2CB50EDA2A1EB5AE005D04FF /* AnimalFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB50EDD2A1EB5AE005D04FF /* AnimalFactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFactsApp.swift; sourceTree = "<group>"; };
 		2CB50EE12A1EB5AF005D04FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		2CB50F072A1F485E005D04FF /* AnimalsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListView.swift; sourceTree = "<group>"; };
 		2CE22AD72A1F541300AA2438 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		2CE22AD92A1F57B900AA2438 /* AnimalsListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListError.swift; sourceTree = "<group>"; };
-		2CE22ADD2A1F599200AA2438 /* AnimalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRow.swift; sourceTree = "<group>"; };
 		2CE22AE32A1F5AE200AA2438 /* AnimalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRowView.swift; sourceTree = "<group>"; };
 		2CE22AE52A1F5C1900AA2438 /* AnimalRowView+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRowView+Constants.swift"; sourceTree = "<group>"; };
 		2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
@@ -92,6 +92,14 @@
 				2C1337B52A1F9835006FECF7 /* AdView.swift */,
 			);
 			path = Ad;
+			sourceTree = "<group>";
+		};
+		2C1337B72A1FA680006FECF7 /* AnimalFacts */ = {
+			isa = PBXGroup;
+			children = (
+				2C1337B82A1FA69C006FECF7 /* AnimalFacts.swift */,
+			);
+			path = AnimalFacts;
 			sourceTree = "<group>";
 		};
 		2CB50ED12A1EB5AE005D04FF = {
@@ -163,6 +171,7 @@
 		2CB50EFE2A1F43E2005D04FF /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				2C1337B72A1FA680006FECF7 /* AnimalFacts */,
 				2CB50F042A1F4846005D04FF /* AnimalsList */,
 				2CB50EFF2A1F43EC005D04FF /* Root */,
 			);
@@ -204,10 +213,9 @@
 		2CE22ADF2A1F5A6200AA2438 /* AnimalRow */ = {
 			isa = PBXGroup;
 			children = (
-				2CE22ADD2A1F599200AA2438 /* AnimalRow.swift */,
 				2CE22AE32A1F5AE200AA2438 /* AnimalRowView.swift */,
-				2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */,
 				2CE22AE52A1F5C1900AA2438 /* AnimalRowView+Constants.swift */,
+				2CE22AE72A1F5D2900AA2438 /* ComingSoonView.swift */,
 			);
 			path = AnimalRow;
 			sourceTree = "<group>";
@@ -315,10 +323,10 @@
 				2C1337B02A1F7F57006FECF7 /* String+Error.swift in Sources */,
 				2CE22AEA2A1F5DA900AA2438 /* String+URL.swift in Sources */,
 				2CE22AE82A1F5D2900AA2438 /* ComingSoonView.swift in Sources */,
+				2C1337B92A1FA69C006FECF7 /* AnimalFacts.swift in Sources */,
 				2CB50EF12A1F2EF4005D04FF /* AnimalsFactsAPI.swift in Sources */,
 				2CB50F062A1F4854005D04FF /* AnimalsList.swift in Sources */,
 				2CE22AD82A1F541300AA2438 /* ViewState.swift in Sources */,
-				2CE22ADE2A1F599200AA2438 /* AnimalRow.swift in Sources */,
 				2CB50F082A1F485E005D04FF /* AnimalsListView.swift in Sources */,
 				2C1337B22A1F805F006FECF7 /* AnimalsListRetryView.swift in Sources */,
 				2CB50F012A1F4425005D04FF /* Root.swift in Sources */,
