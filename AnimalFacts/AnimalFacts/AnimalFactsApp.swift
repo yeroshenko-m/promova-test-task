@@ -6,13 +6,14 @@
 //  Created: 25.05.2023
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 @main
 struct AnimalFactsApp: App {
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            RootView(store: Store(initialState: Root.State(), reducer: Root()))
         }
     }
 }
