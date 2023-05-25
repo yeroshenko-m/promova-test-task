@@ -13,13 +13,14 @@ struct AnimalsList: ReducerProtocol {
     struct State: Equatable {
         var rows: IdentifiedArrayOf<AnimalRow.State> = []
         var isLoading: Bool = false
-        var error: AnimalsListError?
+        var retry: AnimalsListRetry.State?
     }
 
     enum Action: Equatable {
         case fetchAnimals
         case animalsResponse(TaskResult<[Animal]>)
         case row(index: AnimalRow.State.ID, action: AnimalRow.Action)
+        case retry(AnimalsListRetry.Action)
     }
 
     @Dependency(\.factsClient) var factsClient: AnimalFactsClient
@@ -40,16 +41,25 @@ struct AnimalsList: ReducerProtocol {
                 return .none
 
             case let .animalsResponse(.failure(error)):
-                state.error = AnimalsListError.underlying(error)
+                state.retry = AnimalsListRetry.State(error: AnimalsListError.underlying(error))
                 state.isLoading = false
                 return .none
 
             case .row:
                 return .none
+
+            case let .retry(retryAction):
+                switch retryAction {
+                case .retryTapped:
+                    return .send(.fetchAnimals)
+                }
             }
         }
         .forEach(\.rows, action: /Action.row) {
             AnimalRow()
+        }
+        .ifLet(\.retry, action: /Action.retry) {
+            AnimalsListRetry()
         }
     }
 }
