@@ -13,8 +13,10 @@ struct RootView: View {
     let store: StoreOf<Root>
 
     var body: some View {
-        WithViewStore(self.store) { _ in
-            EmptyView()
+        NavigationView {
+            WithViewStore(self.store) { _ in
+                AnimalsListView(store: self.store.scope(state: \.animalsList, action: Root.Action.animalsList))
+            }
         }
     }
 }

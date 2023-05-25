@@ -11,7 +11,7 @@ import Foundation
 
 struct Root: ReducerProtocol {
     struct State: Equatable {
-        var animalsList: AnimalsList.State
+        var animalsList = AnimalsList.State()
     }
 
     enum Action: Equatable {
