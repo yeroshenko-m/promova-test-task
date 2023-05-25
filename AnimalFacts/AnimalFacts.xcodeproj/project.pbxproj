@@ -15,6 +15,8 @@
 		2CB50EF32A1F2F0F005D04FF /* AnimalFactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50EF22A1F2F0F005D04FF /* AnimalFactsClient.swift */; };
 		2CB50EF62A1F2F76005D04FF /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50EF52A1F2F76005D04FF /* Animal.swift */; };
 		2CB50EF82A1F2FA5005D04FF /* AnimalFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50EF72A1F2FA5005D04FF /* AnimalFact.swift */; };
+		2CB50EFA2A1F4301005D04FF /* Animal+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50EF92A1F4301005D04FF /* Animal+Preview.swift */; };
+		2CB50EFC2A1F4351005D04FF /* AnimalFact+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB50EFB2A1F4351005D04FF /* AnimalFact+Preview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2CB50EF22A1F2F0F005D04FF /* AnimalFactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFactsClient.swift; sourceTree = "<group>"; };
 		2CB50EF52A1F2F76005D04FF /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		2CB50EF72A1F2FA5005D04FF /* AnimalFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFact.swift; sourceTree = "<group>"; };
+		2CB50EF92A1F4301005D04FF /* Animal+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+Preview.swift"; sourceTree = "<group>"; };
+		2CB50EFB2A1F4351005D04FF /* AnimalFact+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalFact+Preview.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		2CB50EE32A1EB5AF005D04FF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				2CB50EFD2A1F43AF005D04FF /* Models */,
 				2CB50EE42A1EB5AF005D04FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -90,6 +95,15 @@
 			children = (
 				2CB50EF52A1F2F76005D04FF /* Animal.swift */,
 				2CB50EF72A1F2FA5005D04FF /* AnimalFact.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2CB50EFD2A1F43AF005D04FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CB50EF92A1F4301005D04FF /* Animal+Preview.swift */,
+				2CB50EFB2A1F4351005D04FF /* AnimalFact+Preview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +211,8 @@
 				2CB50EF82A1F2FA5005D04FF /* AnimalFact.swift in Sources */,
 				2CB50EF62A1F2F76005D04FF /* Animal.swift in Sources */,
 				2CB50EDE2A1EB5AE005D04FF /* AnimalFactsApp.swift in Sources */,
+				2CB50EFC2A1F4351005D04FF /* AnimalFact+Preview.swift in Sources */,
+				2CB50EFA2A1F4301005D04FF /* Animal+Preview.swift in Sources */,
 				2CB50EF32A1F2F0F005D04FF /* AnimalFactsClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
