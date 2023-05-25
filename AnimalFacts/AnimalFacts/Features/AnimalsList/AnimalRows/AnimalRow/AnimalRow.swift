@@ -13,6 +13,8 @@ struct AnimalRow: ReducerProtocol {
     struct State: Equatable, Identifiable {
         let animal: Animal
         var id: UUID { animal.id }
+        var isPremium: Bool { animal.status == .paid }
+        var isComingSoon: Bool { animal.status == .comingSoon }
     }
 
     enum Action: Equatable {
