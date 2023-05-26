@@ -46,6 +46,7 @@ struct AnimalFactCellView: View {
             }
             .frame(height: height * Constants.Picture.heightMultiplier)
             .aspectRatio(contentMode: .fill)
+            .fixedSize(horizontal: false, vertical: true)
             .cornerRadius(Constants.Picture.cornerRadius)
             .clipped()
             .padding(Constants.Picture.padding)

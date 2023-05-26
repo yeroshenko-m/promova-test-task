@@ -26,7 +26,7 @@ extension AnimalFactCellView {
         struct Picture {
             static let cornerRadius: CGFloat = 6.0
             static let heightMultiplier: CGFloat = 0.5
-            static let padding: EdgeInsets = EdgeInsets(top: 5.0, leading: 5.0, bottom: 5.0, trailing: .zero)
+            static let padding: EdgeInsets = EdgeInsets(top: 5.0, leading: 5.0, bottom: .zero, trailing: 5.0)
         }
 
         struct Title {
