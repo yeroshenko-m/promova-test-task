@@ -28,19 +28,11 @@ struct ComingSoonView: View {
     }
 }
 
-// MARK: - ComingSoonView + Constants
-
-extension ComingSoonView {
-    struct Constants {
-        static let backgroundColor: Color = .black
-        static let backgroundOpdacity: CGFloat = 0.7
-        static let image: String = "coming-soon"
+#if DEBUG
+    struct ComingSoonView_Previews: PreviewProvider {
+        static var previews: some View {
+            ComingSoonView()
+                .frame(height: 100)
+        }
     }
-}
-
-struct ComingSoonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ComingSoonView()
-            .frame(height: 100)
-    }
-}
+#endif

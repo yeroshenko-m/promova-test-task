@@ -98,17 +98,15 @@ struct AnimalsListView: View {
     }
 }
 
-extension AnimalsListView {
-    struct Constants {
-        static let rowsHorizontalPadding: CGFloat = 16.0
-        static let rowsVerticalPadding: CGFloat = 16.0
-        static let backgroundColor: Color = Color(hexString: "#BEC8FF")
-        static let loaderScale: CGFloat = 2.0
+#if DEBUG
+    struct AnimalsListView_Previews: PreviewProvider {
+        static var previews: some View {
+            AnimalsListView(
+                store: Store(
+                    initialState: AnimalsList.State(animals: [.elephant, .crocodile, .bug]),
+                    reducer: AnimalsList()
+                )
+            )
+        }
     }
-}
-
-struct AnimalsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmptyView()
-    }
-}
+#endif

@@ -17,6 +17,10 @@ struct AnimalsList: ReducerProtocol {
         var alert: AlertState<Action>?
         var isWatchingAd: Bool = false
         var isLoading: Bool = false
+
+        init(animals: [Animal] = []) {
+            self.animals = IdentifiedArray(uniqueElements: animals)
+        }
     }
 
     enum Action: Equatable {

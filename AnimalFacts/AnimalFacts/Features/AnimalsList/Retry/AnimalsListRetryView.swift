@@ -37,23 +37,13 @@ struct AnimalsListRetryView: View {
     }
 }
 
-extension AnimalsListRetryView {
-    struct Constants {
-        static let titleFont: Font = .title
-        static let titleColor: Color = .black
-        static let buttonColor: Color = .blue
-        static let buttonTitleColor: Color = .white
-        static let buttonHeight: CGFloat = 50.0
-        static let cornerRadius: CGFloat = 6.0
-        static let buttonPadding: CGFloat = 20.0
+#if DEBUG
+    struct AnimalsListRetryView_Previews: PreviewProvider {
+        static var previews: some View {
+            AnimalsListRetryView(
+                store: Store(initialState: AnimalsListRetry.State(error: .underlying("")),
+                             reducer: AnimalsListRetry())
+            )
+        }
     }
-}
-
-struct AnimalsListRetryView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimalsListRetryView(
-            store: Store(initialState: AnimalsListRetry.State(error: .underlying("")),
-                         reducer: AnimalsListRetry())
-        )
-    }
-}
+#endif
