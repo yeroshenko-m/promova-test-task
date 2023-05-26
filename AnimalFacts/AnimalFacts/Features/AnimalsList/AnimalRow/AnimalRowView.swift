@@ -36,25 +36,11 @@ struct AnimalRowView: View {
 
     @ViewBuilder
     private var image: some View {
-        AsyncImage(
-            url: animal.image.asURL()) {
-                $0.resizable()
-            } placeholder: {
-                imagePlaceholder
-            }
+        RemoteImage(urlString: animal.image)
             .aspectRatio(contentMode: .fill)
             .frame(width: Constants.Picture.width, height: Constants.Picture.height)
             .cornerRadius(Constants.Picture.cornerRadius)
             .padding([.top, .leading, .bottom], Constants.Picture.padding)
-    }
-
-    @ViewBuilder
-    private var imagePlaceholder: some View {
-        ZStack {
-            Rectangle()
-                .fill(Constants.Colors.placeholder)
-            ProgressView()
-        }
     }
 
     @ViewBuilder

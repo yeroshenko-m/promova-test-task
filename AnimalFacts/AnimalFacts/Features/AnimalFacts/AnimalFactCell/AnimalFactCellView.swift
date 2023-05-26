@@ -38,27 +38,13 @@ struct AnimalFactCellView: View {
         with url: String,
         height: CGFloat
     ) -> some View {
-        AsyncImage(
-            url: url.asURL()) {
-                $0.resizable()
-            } placeholder: {
-                imagePlaceholder
-            }
+        RemoteImage(urlString: url)
             .frame(height: height * Constants.Picture.heightMultiplier)
             .aspectRatio(contentMode: .fill)
             .fixedSize(horizontal: false, vertical: true)
             .cornerRadius(Constants.Picture.cornerRadius)
             .clipped()
             .padding(Constants.Picture.padding)
-    }
-
-    @ViewBuilder
-    private var imagePlaceholder: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color(uiColor: .systemGray5))
-            ProgressView()
-        }
     }
 
     @ViewBuilder
