@@ -74,7 +74,7 @@ struct AnimalFactCellView: View {
     private func buttons(with viewStore: ViewStoreOf<AnimalFactCell>) -> some View {
         HStack {
             Button {
-                viewStore.send(.previousButtonTapped)
+                viewStore.send(.previousButtonTapped(viewStore.index))
             } label: {
                 button(with: Constants.Buttons.previousImage)
             }
@@ -86,7 +86,7 @@ struct AnimalFactCellView: View {
             Spacer()
 
             Button {
-                viewStore.send(.nextButtonTapped)
+                viewStore.send(.nextButtonTapped(viewStore.index))
             } label: {
                 button(with: Constants.Buttons.nextImage)
             }
@@ -112,12 +112,11 @@ struct AnimalFactCellView: View {
 
 struct AnimalFactCellView_Previews: PreviewProvider {
     static let animal = AnimalFact.elephants[0]
-    static let animal1 = AnimalFact.crocodiles[0]
 
     static var previews: some View {
         AnimalFactCellView(
             store: Store(
-                initialState: AnimalFactCell.State(image: animal.image, text: animal.fact),
+                initialState: AnimalFactCell.State(fact: animal, index: 0, isPreviuosButtonEnabled: false),
                 reducer: AnimalFactCell())
         )
         .padding(

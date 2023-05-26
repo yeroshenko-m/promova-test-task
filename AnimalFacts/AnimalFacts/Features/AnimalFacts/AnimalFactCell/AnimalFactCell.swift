@@ -10,28 +10,32 @@ import ComposableArchitecture
 import Foundation
 
 struct AnimalFactCell: ReducerProtocol {
-    struct State: Equatable {
+    struct State: Equatable, Identifiable {
+        let id: UUID
+        let index: Int
         let image: String
         let text: String
         let isPreviuosButtonEnabled: Bool
         let isNextButtonEnabled: Bool
 
         init(
-            image: String,
-            text: String,
+            fact: AnimalFact,
+            index: Int,
             isPreviuosButtonEnabled: Bool = true,
             isNextButtonEnabled: Bool = true
         ) {
-            self.image = image
-            self.text = text
+            id = fact.id
+            image = fact.image
+            text = fact.fact
+            self.index = index
             self.isPreviuosButtonEnabled = isPreviuosButtonEnabled
             self.isNextButtonEnabled = isNextButtonEnabled
         }
     }
 
     enum Action: Equatable {
-        case previousButtonTapped
-        case nextButtonTapped
+        case previousButtonTapped(Int)
+        case nextButtonTapped(Int)
     }
 
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
