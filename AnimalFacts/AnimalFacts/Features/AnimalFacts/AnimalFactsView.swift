@@ -17,6 +17,26 @@ struct AnimalFactsView: View {
             ZStack {
                 Constants.backgroundColor
                     .ignoresSafeArea()
+
+                VStack {
+                    PagedView(
+                        pageCount: viewStore.facts.count,
+                        currentIndex: viewStore.binding(
+                            get: \.selected,
+                            send: AnimalFacts.Action.tabChanged
+                        )
+                    ) {
+                        ForEachStore(
+                            self.store.scope(
+                                state: \.facts,
+                                action: AnimalFacts.Action.fact
+                            )
+                        ) { cellStore in
+                            AnimalFactCellView(store: cellStore)
+                                .padding(EdgeInsets(top: 50, leading: 20, bottom: 100, trailing: 20))
+                        }
+                    }
+                }
             }
         }
         .foregroundColor(.black)
