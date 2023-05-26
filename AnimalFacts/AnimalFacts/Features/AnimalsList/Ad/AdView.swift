@@ -20,17 +20,10 @@ struct AdView: View {
     }
 }
 
-// MARK: - AdView + Constants
-
-extension AdView {
-    struct Constants {
-        static let backgroundOpacity: CGFloat = 0.5
-        static let loaderScale: CGFloat = 2.0
+#if DEBUG
+    struct AdView_Previews: PreviewProvider {
+        static var previews: some View {
+            AdView()
+        }
     }
-}
-
-struct AdView_Previews: PreviewProvider {
-    static var previews: some View {
-        AdView()
-    }
-}
+#endif

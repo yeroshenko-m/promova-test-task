@@ -85,11 +85,12 @@ struct AnimalRowView: View {
                 .foregroundColor(Constants.Colors.premiumLabel)
         }
     }
-
 }
 
-struct AnimalRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimalRowView(animal: .elephant)
+#if DEBUG
+    struct AnimalRowView_Previews: PreviewProvider {
+        static var previews: some View {
+            AnimalRowView(animal: .elephant)
+        }
     }
-}
+#endif

@@ -111,23 +111,25 @@ struct AnimalFactCellView: View {
     }
 }
 
-struct AnimalFactCellView_Previews: PreviewProvider {
-    static let animal = AnimalFact.elephants[0]
+#if DEBUG
+    struct AnimalFactCellView_Previews: PreviewProvider {
+        static let animal = AnimalFact.elephants[0]
 
-    static var previews: some View {
-        AnimalFactCellView(
-            store: Store(
-                initialState: AnimalFactCell.State(fact: animal, index: 0, isPreviuosButtonEnabled: false),
-                reducer: AnimalFactCell())
-        )
-        .padding(
-            EdgeInsets(
-                top: 50,
-                leading: 20,
-                bottom: 100,
-                trailing: 20
+        static var previews: some View {
+            AnimalFactCellView(
+                store: Store(
+                    initialState: AnimalFactCell.State(fact: animal, index: 0, isPreviuosButtonEnabled: false),
+                    reducer: AnimalFactCell())
             )
-        )
-        .background(.blue)
+            .padding(
+                EdgeInsets(
+                    top: 50,
+                    leading: 20,
+                    bottom: 100,
+                    trailing: 20
+                )
+            )
+            .background(.blue)
+        }
     }
-}
+#endif
