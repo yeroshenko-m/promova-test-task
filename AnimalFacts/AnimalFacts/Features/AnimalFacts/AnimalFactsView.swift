@@ -33,7 +33,7 @@ struct AnimalFactsView: View {
                             )
                         ) { cellStore in
                             AnimalFactCellView(store: cellStore)
-                                .padding(EdgeInsets(top: 50, leading: 20, bottom: 100, trailing: 20))
+                                .padding(Constants.padding)
                         }
                     }
                 }
@@ -48,6 +48,7 @@ extension AnimalFactsView {
         static let backgroundColor: Color = Color(hexString: "#BEC8FF")
         static let backButtonImage: String = "arrow.left"
         static let backButtonColor: Color = .black
+        static let padding: EdgeInsets = EdgeInsets(top: 50.0, leading: 20.0, bottom: 100.0, trailing: 20.0)
     }
 }
 

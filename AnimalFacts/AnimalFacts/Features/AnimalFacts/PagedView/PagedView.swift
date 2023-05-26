@@ -42,6 +42,7 @@ struct PagedView<Content: View>: View {
                     self.currentIndex = min(max(Int(newIndex), .zero), pageCount - 1)
                 }
             )
+            .animation(.easeInOut, value: currentIndex)
         }
     }
 }
